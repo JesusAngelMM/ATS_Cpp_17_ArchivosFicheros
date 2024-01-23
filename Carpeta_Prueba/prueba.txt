@@ -1,1 +1,6 @@
-Hola que tal, mi nombre es Angel
+Este es un texto de ejemplo
+con varios saltos de línea.
+Puedes usarlo para probar
+la funcionalidad de impresión
+en diferentes consolas.
+¡Espero que sea de ayuda!
