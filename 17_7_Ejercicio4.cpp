@@ -10,6 +10,7 @@ struct Datos{
 void menu();
 void crear_Contacto();
 void agregar_Contacto();
+void visualizar_Contacto();
 
 int main(){
 
@@ -40,7 +41,11 @@ void menu(){
             cout<<"\n";
             system("pause");
             break;
-        
+        case 3:
+            visualizar_Contacto();
+            cout<<"\n";
+            system("pause");
+            break;
         default:
             break;
         }
@@ -98,6 +103,24 @@ void agregar_Contacto(){
 
         cout<<"Desea agregar otro contacto (S/n): "; cin>>respuesta;
     }while (respuesta == 'S' || respuesta == 's');
+
+    archivo.close();
+}
+void visualizar_Contacto(){
+    ifstream archivo;
+    string texto;
+
+    archivo.open("AgendaTelefonica.txt", ios::in);
+
+    if(archivo.fail()){
+        cout<<"Error, no se pudo abrir el archivo";
+        exit(1);
+    }
+
+    while(!archivo.eof()){
+        getline(archivo, texto);
+        cout<<texto<<endl;
+    }
 
     archivo.close();
 }

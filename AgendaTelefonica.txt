@@ -17,3 +17,11 @@ Nombre: Luis
 Apellido: Diaz
 Telefono: 0987654321
 
+Nombre: Pepe
+Apellido: Ramos
+Telefono: 9375927493
+
+Nombre: Juan
+Apellido: San
+Telefono: 1234567890
+
