@@ -9,12 +9,12 @@ struct Datos{
 
 void menu();
 void crear_Contacto();
+void agregar_Contacto();
 
 int main(){
 
     menu();
 
-    system("pause");
     return 0;
 }
 
@@ -32,13 +32,19 @@ void menu(){
         switch (opcion){
         case 1:
             crear_Contacto();
+            cout<<"\n";
+            system("pause");
+            break;
+        case 2:
+            agregar_Contacto();
+            cout<<"\n";
+            system("pause");
             break;
         
         default:
             break;
         }
         system("cls");
-        system("pause");
     }while(opcion != 0);
 }
 
@@ -67,5 +73,31 @@ void crear_Contacto(){
         cout<<"Desea agregar otro contacto (S/n): "; cin>>respuesta;
     }while (respuesta == 'S' || respuesta == 's');
     
+    archivo.close();
+}
+void agregar_Contacto(){
+    ofstream archivo;
+    char respuesta;
+
+    archivo.open("AgendaTelefonica.txt", ios::app);
+
+    if(archivo.fail()){
+        cout<<"Error, no se pudo abrir el archivo";
+        exit(1);
+    }
+
+    do{
+        fflush(stdin);
+        cout<<"\nDigite su nombre: "; getline(cin, datos.nombre);
+        cout<<"Digite su apellido: "; getline(cin, datos.apellido);
+        cout<<"Digite su telefono: "; getline(cin, datos.telefono);
+
+        archivo<<"Nombre: "<<datos.nombre<<endl;
+        archivo<<"Apellido: "<<datos.apellido<<endl;
+        archivo<<"Telefono: "<<datos.telefono<<endl<<endl;
+
+        cout<<"Desea agregar otro contacto (S/n): "; cin>>respuesta;
+    }while (respuesta == 'S' || respuesta == 's');
+
     archivo.close();
 }

@@ -7,3 +7,13 @@ Nombre: Omar
 Apellido: San German
 Telefono: 9513546185
 
+
+Nombre: ROsa
+Apellido: Sanchez
+Telefono: 346325245
+
+
+Nombre: Luis
+Apellido: Diaz
+Telefono: 0987654321
+
